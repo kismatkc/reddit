@@ -1,4 +1,5 @@
 run = "npm run dev"
+# run = "cd backend && node server.js"
 entrypoint = "README.md"
 modules = ["nodejs-20:v8-20230920-bd784b9"]
 
@@ -8,3 +9,11 @@ channel = "stable-23_11"
 [[ports]]
 localPort = 3000
 externalPort = 80
+
+[[ports]]
+localPort = 4000
+externalPort = 3000
+
+[[ports]]
+localPort = 5000
+externalPort = 5000

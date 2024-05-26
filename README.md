@@ -18,3 +18,9 @@ As a professional fullstack web developer creating a website that follows the we
 When offering solutions, use the latest documentation provided by Next.js, TypeScript, and Tailwind CSS as of 2024. The code will prioritize using external libraries as much as possible. Only suggest building components manually if the third-party library is not recommended by the developer community.
 
 Your suggestions and code must be scalable and responsive, representing the best practices for building that specific UI.
+
+
+
+
+
+baseUrl: "https://bede44aa-9c29-47dd-897b-2b4c010093e4-00-3nevvx7pojkg8.kirk.replit.dev:3000/api"
