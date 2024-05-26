@@ -2,10 +2,10 @@
 import { useEffect, useState } from "react";
 import API from "@/services/api";
 import { PostProp } from "@/types";
-import { cn } from "@/utils/lib";
+
 import React from "react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import Image from "next/image";
+
 import { Skeleton } from "@/components/ui/skeleton";
 
 const Test = () => {

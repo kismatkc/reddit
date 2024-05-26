@@ -79,7 +79,7 @@ const Header = () => {
 
     
   
- <Image src="/reddit-seeklogo.svg" width={100} height={100}  alt='reddit logo' priority/>
+ <img src="/reddit-seeklogo.svg" className='size-24 md:size-32 relative' alt='reddit logo'/>
    
    
 
