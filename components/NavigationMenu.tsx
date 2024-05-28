@@ -23,27 +23,27 @@ const NavigationMenu = ({
   const [isClicked, setIsClicked] = useState(false);
 
   return (
-    <nav className="flex gap-4 items-center justify-center">
-      <ModeToggle className="hidden md:block" />
+    <nav  className={`flex gap-4 items-center justify-center ${isClicked && "!hidden"}`}>
+      <ModeToggle className="hidden"/>
       <FaSearch
         onClick={() => {
           setIsClicked(true);
           searchButtonClicked(true);
         }}
-        className={`${isClicked && "hidden"}`}
+        
       />
-      <FaPlus className={`${isClicked && "hidden"}`} />
-      <FaBell className={`${isClicked && "hidden"}`} />
+      <FaPlus />
+      <FaBell  />
 
       <Sheet>
         <SheetTrigger>
           {user ? (
-            <Avatar>
+            <Avatar className={`${isClicked && "hidden"}`}>
               <AvatarImage src="https://github.com/shadcn.png" />
               <AvatarFallback>KK</AvatarFallback>
             </Avatar>
           ) : (
-            <span className="px-4 py-2 text-black backdrop-blur-sm border border-black rounded-md hover:shadow-[0px_0px_4px_4px_rgba(0,0,0,0.1)] bg-white/[0.2] text-sm transition duration-200">
+            <span className={`px-4 py-2 text-black backdrop-blur-sm border border-black rounded-md hover:shadow-[0px_0px_4px_4px_rgba(0,0,0,0.1)] bg-white/[0.2] text-sm transition duration-200 ${isClicked && "hidden"}`}>
               Sign-in
             </span>
           )}

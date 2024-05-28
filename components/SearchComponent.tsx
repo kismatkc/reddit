@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 
-const SearchComponent = ({ showSearchbar }: { showSearchbar: boolean }) => {
+const SearchComponent = ({ showSearchbar ,className}: { showSearchbar: boolean,className: string }) => {
   return (
+    <div className={className}>
     <div
-      className={`flex hidden items-center justify-between text-center ${
+      className={`flex hidden pr-2 items-center justify-between text- ${
         showSearchbar && "!block"
       } 
-      `}
-      // className={`flex items-center justify-between text-center ${
-      //   showSearchbar ? "block" : "hidden"
-      // } md:block`}
+        `}
+      
     >
       <input
         type="text"
@@ -27,6 +26,7 @@ const SearchComponent = ({ showSearchbar }: { showSearchbar: boolean }) => {
           </g>
         </svg>
       </button>
+    </div>
     </div>
   );
 };

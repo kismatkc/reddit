@@ -1,15 +1,16 @@
 "use client";
-import React, { use } from "react";
-import Image from "next/image";
+import React from "react";
+import Logo from "@/components/logo"
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
+  
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { ModeToggle } from "@/components/ui/ModeToggle";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import NavigationMenu from "./NavigationMenu";
 
@@ -23,8 +24,8 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between">
-      <div className="flex gap-2 items-center justify-center">
+    <header className="flex w-full justify-between sticky top-0 bg-background dark:bg-background z-50  ">
+      <div className="flex   items-center justify-center">
         <Sheet>
           <SheetTrigger>
             <svg
@@ -37,18 +38,27 @@ const Header = () => {
               <path d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </SheetTrigger>
-          <SheetContent side="left">
-            <ModeToggle className=" md:hidden" />
+          <SheetContent side="left" >
+            <div className="flex justify-between">
+      
+            {user ? (
+              <Avatar className="md:hidden">
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>KK</AvatarFallback>
+              </Avatar>
+            ) : (
+              <span className={`px-4 py-2 text-black backdrop-blur-sm border border-black rounded-md hover:shadow-[0px_0px_4px_4px_rgba(0,0,0,0.1)] bg-white/[0.2] text-sm transition duration-200 hidden ${showSearchBar && "!block"}`}>
+                Sign-in
+              </span>
+            )}
+                    <ModeToggle className=" md:hidden" />
+            </div>
           </SheetContent>
         </Sheet>
 
-        <img
-          src="/reddit-seeklogo.svg"
-          className="size-24 md:size-32 relative"
-          alt="reddit logo"
-        />
+        <Logo />
       </div>
-      <SearchComponent showSearchbar={showSearchBar} />
+      <SearchComponent showSearchbar={showSearchBar} className="flex justify-end items-center" />
       <NavigationMenu
         user={user as any}
         searchButtonClicked={searchButtonClicked}

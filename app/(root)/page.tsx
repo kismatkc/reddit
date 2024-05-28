@@ -26,7 +26,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <div>
+        <div className="overflow-hidden">
             <BentoGrid className="max-w-4xl  mx-auto md:auto-rows-[20rem]">
                 {posts.map((item, i) => (
                     <BentoGridItem
