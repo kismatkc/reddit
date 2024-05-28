@@ -15,10 +15,10 @@ const Hero = () => {
         const getPublicPosts = async () => {
             try {
                 const response = await API.get("/posts/public");
-                console.log(response.data); // Debugging line
+                
                 setPosts(response.data);
             } catch (error) {
-                console.error("Error fetching public posts:", error); // Debugging line
+       
             }
         };
 
