@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import {
   Sheet,
   SheetContent,
@@ -15,25 +15,30 @@ import { FaPlus, FaBell, FaSearch } from "react-icons/fa";
 
 const NavigationMenu = ({
   user,
-  searchButtonClicked,
+  searchButtonClicked,showSearchbar
 }: {
-  user: User;
-  searchButtonClicked: Function;
+  user: User,
+  searchButtonClicked: Function,
+  showSearchbar: boolean
 }) => {
   const [isClicked, setIsClicked] = useState(false);
-
+useEffect(()=>{
+  setIsClicked(showSearchbar)
+  
+},[showSearchbar])
+   
   return (
     <nav  className={`flex gap-4 items-center justify-center ${isClicked && "!hidden"}`}>
       <ModeToggle className="hidden"/>
-      <FaSearch
+      <FaSearch className="cursor-pointer" 
         onClick={() => {
           setIsClicked(true);
           searchButtonClicked(true);
         }}
         
       />
-      <FaPlus />
-      <FaBell  />
+      <FaPlus className="cursor-pointer" />
+      <FaBell className="cursor-pointer"  />
 
       <Sheet>
         <SheetTrigger>

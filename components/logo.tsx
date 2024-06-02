@@ -11,6 +11,7 @@ const Logo = () => {
         className="size-20 dark:hidden"
         width={80} 
         height={80} 
+        priority
       />
       <Image
         src={darkThemeLogo}
@@ -18,6 +19,7 @@ const Logo = () => {
         className="size-20 hidden dark:block"
         width={80} 
         height={80} 
+        priority
       />
     </div>
   );

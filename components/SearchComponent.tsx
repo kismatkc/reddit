@@ -1,9 +1,32 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState,useEffect,useRef } from "react";
 
-const SearchComponent = ({ showSearchbar ,className}: { showSearchbar: boolean,className: string }) => {
+const SearchComponent = ({ showSearchbar ,className,onSearch,searchButtonClicked}: { showSearchbar: boolean,className: string,onSearch: (query: string)=> void,searchButtonClicked: (value: boolean)=>void }) => {
+  const inputRef = useRef(null);
+ const onMousedownEventChange = (event)=>{
+   if(inputRef.current && !inputRef.current.contains(event.target)){
+       searchButtonClicked(false)
+   }
+ };
+
+  useEffect(()=>{
+    
+if(showSearchbar){
+  document.addEventListener('mousedown',onMousedownEventChange);
+}
+
+
+    
+  },[showSearchbar])
+  
+
+  const onInputChnage = (e: ChangeEvent<HTMLInputElement>)=>{
+    const value = e.target.value;
+    onSearch(value);
+  }
   return (
     <div className={className}>
     <div
+      ref={inputRef}
       className={`flex hidden pr-2 items-center justify-between text- ${
         showSearchbar && "!block"
       } 
@@ -12,8 +35,10 @@ const SearchComponent = ({ showSearchbar ,className}: { showSearchbar: boolean,c
     >
       <input
         type="text"
+      
         className="font-inherit text-inherit bg-[#f4f2f2] border-none text-[#646464] p-[0.7rem] [1rem] rounded-[30px] w-[12em] transition-all duration-500 ease-in-out mr-[-2rem] focus:outline-none focus:bg-[#f0eeee] focus:shadow-[0_0_1em_#00000013]"
         placeholder="Type your text"
+        onChange={onInputChnage}
       />
       <button className="border-none bg-[#f4f2f2] mt-[0.1em] hover:cursor-pointer">
         <svg

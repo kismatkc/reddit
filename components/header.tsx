@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import Logo from "@/components/logo"
+import {useSearch} from "./searchContext"
+
 import {
   Sheet,
   SheetContent,
@@ -18,6 +20,8 @@ import SearchComponent from "./SearchComponent";
 const Header = () => {
   const [user, setUser] = useState(null);
   const [showSearchBar, setShowSearchbar] = useState(false);
+
+  const {setSearchQuery} = useSearch();
 
   const searchButtonClicked = (value: boolean) => {
     setShowSearchbar(value);
@@ -58,10 +62,11 @@ const Header = () => {
 
         <Logo />
       </div>
-      <SearchComponent showSearchbar={showSearchBar} className="flex justify-end items-center" />
+      <SearchComponent showSearchbar={showSearchBar} searchButtonClicked={searchButtonClicked} className="flex justify-end items-center" onSearch = {setSearchQuery} />
       <NavigationMenu
         user={user as any}
         searchButtonClicked={searchButtonClicked}
+         showSearchbar={showSearchBar}
       />
     </header>
   );
