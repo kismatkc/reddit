@@ -18,7 +18,7 @@ const Hero = () => {
             if (!searchQuery) {
                 try {
                     const response = await API.get("/posts/public");
-                   
+                   console.log(response.data[0]);
                     setPosts(response.data);
                 } catch (error) {
                     console.error("Error fetching public posts:", error); // Debugging line
