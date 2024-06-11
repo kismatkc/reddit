@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 
 import CredentialsProvider from "next-auth/providers/credentials";
-import {connectDatabase} from "@/backend/server"
+import connectDatabase from "@/backend/server"
 import User from "@/backend/models/User"
 
 export const authOptions = NextAuth({
