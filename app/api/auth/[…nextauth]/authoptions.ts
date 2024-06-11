@@ -1,8 +1,8 @@
 import NextAuth from "next-auth";
 
 import CredentialsProvider from "next-auth/providers/credentials";
-import connectDatabase from "@/backend/server"
-import User from "@/backend/models/User"
+import connectDatabase from "@/backend/server";
+import User from "@/backend/models/User";
 
 export const authOptions = NextAuth({
   session: {
@@ -15,19 +15,19 @@ export const authOptions = NextAuth({
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
-  
-  
-  async authorize(credentials){
-    await connectDatabase();
-    const user = await User.findOne({email: credentials.email});
-    
-            if(user && user.comparePassword(credentials.password)) {
-              return {
-                email: credentials.email
-              }
-            }                             
-  }
-  ),
+
+      async authorize(credentials) {
+        await connectDatabase();
+        const user = await User.findOne({ email: credentials.email });
+
+        if (user && user.comparePassword(credentials.password)) {
+          return {
+            email: credentials.email,
+          };
+        }
+        return null;
+      },
+    }),
   ],
   pages: {
     signIn: "/auth/signin",
