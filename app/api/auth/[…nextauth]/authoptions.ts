@@ -23,7 +23,7 @@ export const authOptions = NextAuth({
     
             if(user && user.comparePassword(credentials.password)) {
               return {
-                email
+                email: credentials.email
               }
             }                             
   }
