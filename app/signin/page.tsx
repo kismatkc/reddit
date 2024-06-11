@@ -9,7 +9,7 @@ const signIn = () => {
             <div className="mb-2"></div>
             <h2 className="text-2xl font-bold leading-tight">Create a post</h2>
 
-            <form className="mt-5" onSubmit={(e) => createPost(e)}>
+            <form className="mt-5" onSubmit={(e) => {}}>
               <div className="space-y-4">
                 <div>
                   <label
@@ -22,7 +22,6 @@ const signIn = () => {
                     <input
                       placeholder="Title"
                       type="text"
-                      ref={titleRef}
                       id="title"
                       className="flex h-10 text-gray-700 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                       name="title"
@@ -35,26 +34,10 @@ const signIn = () => {
                   <textarea
                     placeholder="Enter post description"
                     rows={1}
-                    ref={textareaRef}
                     name="description"
                     id="description"
                     className="border focus:outline-none focus:ring-1 overflow-hidden focus:ring-gray-400 focus:ring-offset-1 px-3 py-2 rounded-lg w-full text-gray-700"
                   ></textarea>
-                </div>
-
-                <div className="flex gap-2">
-                  <label>Public</label>
-                  <Switch
-                    ref={typeRef}
-                    onCheckedChange={(checked) => {
-                      if (typeRef.current && checked)
-                        typeRef.current.value = "private";
-                    }}
-                    id="type"
-                    name="type"
-                    value="public"
-                  />
-                  <label htmlFor="type">Private</label>
                 </div>
 
                 <div>
