@@ -34,10 +34,10 @@ UserSchema.pre<IUser>("save",async function(next){
 UserSchema.methods.comparePassword = async function (password: string): Promise<boolean>{
   return bcrypt.compare(password,this.password)
 }
+const User =mongoose.models.User ||    mongoose.model<IUser>("User",UserSchema)
 
 
-export const User =mongoose.models.User ||    mongoose.model<IUser>("User",UserSchema)
-
+ export default User;
 
 
 
