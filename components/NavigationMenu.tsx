@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Sheet,
   SheetContent,
@@ -10,38 +10,45 @@ import {
 import { User } from "@/types";
 import { ModeToggle } from "@/components/ui/ModeToggle";
 
-import {useSearch} from "./searchContext"
+import { useSearch } from "./searchContext";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FaPlus, FaBell, FaSearch } from "react-icons/fa";
 
 const NavigationMenu = ({
   user,
-  searchButtonClicked,showSearchbar
+  searchButtonClicked,
+  showSearchbar,
 }: {
-  user: User,
-  searchButtonClicked: Function,
-  showSearchbar: boolean
+  user: User;
+  searchButtonClicked: Function;
+  showSearchbar: boolean;
 }) => {
   const [isClicked, setIsClicked] = useState(false);
-useEffect(()=>{
-  setIsClicked(showSearchbar)
-
-},[showSearchbar])
-  const {setIsPlusIconClicked} = useSearch();
+  useEffect(() => {
+    setIsClicked(showSearchbar);
+  }, [showSearchbar]);
+  const { setIsPlusIconClicked } = useSearch();
 
   return (
-    <nav  className={`flex gap-4 items-center justify-center ${isClicked && "!hidden"}`}>
-      <ModeToggle className="hidden"/>
-      <FaSearch className="cursor-pointer" 
+    <nav
+      className={`flex gap-4 items-center justify-center ${
+        isClicked && "!hidden"
+      }`}
+    >
+      <ModeToggle className="hidden" />
+      <FaSearch
+        className="cursor-pointer"
         onClick={() => {
           setIsClicked(true);
           searchButtonClicked(true);
         }}
-
       />
-      <FaPlus onClick={()=>setIsPlusIconClicked(true)} className="cursor-pointer" />
-      <FaBell className="cursor-pointer"  />
+      <FaPlus
+        onClick={() => setIsPlusIconClicked(true)}
+        className="cursor-pointer"
+      />
+      <FaBell className="cursor-pointer" />
 
       <Sheet>
         <SheetTrigger>
@@ -51,8 +58,12 @@ useEffect(()=>{
               <AvatarFallback>KK</AvatarFallback>
             </Avatar>
           ) : (
-            <span className={`px-4 py-2 text-black backdrop-blur-sm border border-black rounded-md hover:shadow-[0px_0px_4px_4px_rgba(0,0,0,0.1)] bg-white/[0.2] text-sm transition duration-200 ${isClicked && "hidden"}`}>
-              Sign-in
+            <span
+              className={`px-4 py-2 text-black backdrop-blur-sm border border-black rounded-md hover:shadow-[0px_0px_4px_4px_rgba(0,0,0,0.1)] bg-white/[0.2] text-sm transition duration-200 ${
+                isClicked && "hidden"
+              }`}
+            >
+              Sign-inn
             </span>
           )}
         </SheetTrigger>
