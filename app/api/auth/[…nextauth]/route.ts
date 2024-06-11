@@ -17,7 +17,8 @@ export const authOptions = NextAuth({
     },
   
   async authorize(credentials){
-    
+    await connectDatabase();
+    const user = await 
   }
   ),
   ],
