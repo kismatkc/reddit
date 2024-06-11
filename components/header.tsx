@@ -29,6 +29,7 @@ const Header = () => {
 
   return (
     <header className="flex w-full justify-between sticky top-0 bg-background dark:bg-background z-50  ">
+      
       <div className="flex   items-center justify-center">
         <Sheet>
           <SheetTrigger>
@@ -62,11 +63,12 @@ const Header = () => {
 
         <Logo />
       </div>
-      <SearchComponent showSearchbar={showSearchBar} searchButtonClicked={searchButtonClicked} className="flex justify-end items-center" onSearch = {setSearchQuery} />
+      <SearchComponent  setShowSearchbar={setShowSearchbar} showSearchbar={showSearchBar} searchButtonClicked={searchButtonClicked} className="flex justify-end items-center" onSearch = {setSearchQuery} />
       <NavigationMenu
         user={user as any}
         searchButtonClicked={searchButtonClicked}
          showSearchbar={showSearchBar}
+        setShowSearchbar={setShowSearchbar}
       />
     </header>
   );

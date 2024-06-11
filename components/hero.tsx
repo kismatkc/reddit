@@ -9,7 +9,7 @@ import { useSearch } from "./searchContext";
 
 const Hero = () => {
   const [posts, setPosts] = useState<PostProp[]>([]);
-  const { searchQuery } = useSearch();
+  const { searchQuery,isPlusIconClicked } = useSearch();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -38,7 +38,7 @@ const Hero = () => {
   }, [searchQuery]);
 
   return (
-    <div>
+    <div className={`h-screen overflow-y-scroll ${isPlusIconClicked && "blur-md !overflow-y-hidden"}`}>
       <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
         {posts.map((item, i) => (
           <BentoGridItem

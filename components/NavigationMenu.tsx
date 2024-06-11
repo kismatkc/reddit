@@ -10,6 +10,8 @@ import {
 import { User } from "@/types";
 import { ModeToggle } from "@/components/ui/ModeToggle";
 
+import {useSearch} from "./searchContext"
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FaPlus, FaBell, FaSearch } from "react-icons/fa";
 
@@ -24,9 +26,10 @@ const NavigationMenu = ({
   const [isClicked, setIsClicked] = useState(false);
 useEffect(()=>{
   setIsClicked(showSearchbar)
-  
+
 },[showSearchbar])
-   
+  const {setIsPlusIconClicked} = useSearch();
+
   return (
     <nav  className={`flex gap-4 items-center justify-center ${isClicked && "!hidden"}`}>
       <ModeToggle className="hidden"/>
@@ -35,9 +38,9 @@ useEffect(()=>{
           setIsClicked(true);
           searchButtonClicked(true);
         }}
-        
+
       />
-      <FaPlus className="cursor-pointer" />
+      <FaPlus onClick={()=>setIsPlusIconClicked(true)} className="cursor-pointer" />
       <FaBell className="cursor-pointer"  />
 
       <Sheet>
