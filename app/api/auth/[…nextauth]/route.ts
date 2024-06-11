@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import credentials from "next-auth/providers/credentials";
 import CredentialsProvider from "next-auth/providers/credentials";
+import 
 
 export const authOptions = NextAuth({
   session: {
@@ -15,7 +16,9 @@ export const authOptions = NextAuth({
       },
     },
   
-  async authorize(credentials)
+  async authorize(credentials){
+    
+  }
   ),
   ],
   pages: {
