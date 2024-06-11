@@ -8,7 +8,6 @@ const signIn = () => {
         <div className="flex items-center justify-center my-3">
           <div className="xl:mx-auto shadow-md p-4 xl:w-full xl:max-w-sm 2xl:max-w-md">
             <div className="mb-2"></div>
-            <h2 className="text-2xl font-bold leading-tight">Create a post</h2>
 
             <form className="mt-5" onSubmit={(e) => {}}>
               <div className="space-y-4">
