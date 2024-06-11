@@ -2,12 +2,7 @@ import React from "react";
 
 const signIn = () => {
   return (
-    <div
-      ref={formContainerRef}
-      className={`hidden  ${
-        isPlusIconClicked && "!block"
-      } fixed top-[25vh] left-[10vw]  z-10`}
-    >
+    <div className={`!block fixed top-[25vh] left-[10vw]  z-10`}>
       <section className="rounded-md p-2 bg-white">
         <div className="flex items-center justify-center my-3">
           <div className="xl:mx-auto shadow-md p-4 xl:w-full xl:max-w-sm 2xl:max-w-md">
