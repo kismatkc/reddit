@@ -1,3 +1,3 @@
 import NextAuth from "next-auth";
 
-import 
+import { authOptions } from "../../authoptions";
