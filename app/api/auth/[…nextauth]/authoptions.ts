@@ -21,7 +21,7 @@ export const authOptions = NextAuth({
     await connectDatabase();
     const user = await User.findOne({email: credentials.email});
     
-            if(user && User.)                               
+            if(user && User.comparePassword)                               
   }
   ),
   ],
