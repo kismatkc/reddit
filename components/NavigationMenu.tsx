@@ -63,7 +63,7 @@ const NavigationMenu = ({
                 isClicked && "hidden"
               }`}
             >
-              Sign-inn
+              Sign-in
             </span>
           )}
         </SheetTrigger>
