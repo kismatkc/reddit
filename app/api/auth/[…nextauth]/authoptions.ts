@@ -19,7 +19,6 @@ export const authOptions = NextAuth({
         await connectDatabase();
         const user = await User.findOne({ email: credentials.email });
         if (user && (await user.comparePassword(credentials.password))) {
-          // Return only the email if you don't need the id
           return { email: user.email };
         }
         return null;
