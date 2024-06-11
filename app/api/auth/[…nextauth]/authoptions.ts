@@ -15,18 +15,6 @@ export const authOptions = NextAuth({
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
-
-      async authorize(credentials) {
-        await connectDatabase();
-        const user = await User.findOne({ email: credentials.email });
-
-        if (user && user.comparePassword(credentials.password)) {
-          return {
-            email: credentials.email,
-          };
-        }
-        return null;
-      },
     }),
   ],
   pages: {
