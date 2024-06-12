@@ -1,4 +1,4 @@
 import connectDatabase from "../server";
-const createUser = async (email: string, password: string) => {
+const createUser = async (req, res) => {
   await connectDatabase();
 };
