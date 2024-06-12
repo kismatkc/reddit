@@ -10,6 +10,7 @@ const createUser = async (req, res) => {
       email,
       password,
     });
+
     await newUser.save();
     res.status(201).send(newUser);
   } catch (err) {
