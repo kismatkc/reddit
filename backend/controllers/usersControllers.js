@@ -1,5 +1,5 @@
 const { User } = require("../models/User");
-const { connectDatabase } = require("../server");
+const connectDatabase = require("../server");
 
 const createUser = async (req, res) => {
   await connectDatabase();
