@@ -1,20 +1,12 @@
 "use client";
-import React, { ChangeEvent, FormEvent, useState } from "react";
-import { signIn } from "next-auth/react";
-const Login = () => {
+import React, { FormEvent, useState } from "react";
+
+const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleInput = async (e: FormEvent) => {
     e.preventDefault();
-    const result = await signIn("credentials", {
-      redirect: false,
-      email,
-      password,
-    });
-    if (result?.ok) {
-      console.log(result);
-    }
   };
 
   return (
@@ -77,4 +69,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
