@@ -52,7 +52,7 @@ connectDatabase();
 
 // Routes
 app.use("/api/posts", postRoutes);
-app.use("/api/users", userRoutes);
+app.use("/api/users", users - routes);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
