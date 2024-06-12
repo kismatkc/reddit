@@ -1,7 +1,7 @@
 const { User } = require("../models/User");
 const { connectDatabase } = require("../server");
 
-export const createUser = async (req, res) => {
+const createUser = async (req, res) => {
   await connectDatabase();
   try {
     const { email, password } = req.body;
@@ -15,3 +15,5 @@ export const createUser = async (req, res) => {
     res.status(500).send(error);
   }
 };
+
+module.exports = createUser;
