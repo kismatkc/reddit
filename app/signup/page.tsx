@@ -1,4 +1,5 @@
 "use client";
+import API from "@/services/api";
 import React, { FormEvent, useState } from "react";
 
 const SignUp = () => {
