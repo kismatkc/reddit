@@ -5,3 +5,5 @@ const router = express.router;
 
 //Routes for users
 router.post("/createUser", createUser);
+
+module.exports = router;
