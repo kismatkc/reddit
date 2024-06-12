@@ -1,7 +1,6 @@
-import { Request, Response } = require("express");
 import connectDatabase from "../server";
 
-export const createUser = async (req: Request, res: Response) => {
+export const createUser = async (req, res) => {
   await connectDatabase();
   try {
     const { email, password } = req.body;
@@ -20,4 +19,3 @@ export const createUser = async (req: Request, res: Response) => {
     res.status(500).send("Internal server error");
   }
 };
-
