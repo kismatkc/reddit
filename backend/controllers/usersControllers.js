@@ -4,6 +4,7 @@ const connectDatabase = require("../server");
 const createUser = async (req, res) => {
   await connectDatabase();
   try {
+    console.log("hello");
     const { email, password } = req.body;
     const newUser = await User({
       email,
