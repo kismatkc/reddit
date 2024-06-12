@@ -12,6 +12,8 @@ const SignUp = () => {
       email,
       password,
     });
+
+    if(response?.)
   };
 
   return (
