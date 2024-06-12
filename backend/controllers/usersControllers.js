@@ -10,6 +10,6 @@ export const createUser = async (req, res) => {
       password,
     });
     await newUser.save();
-    res.status(201);
+    res.status(201).send(newUser);
   } catch (err) {}
 };
