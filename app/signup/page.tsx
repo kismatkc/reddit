@@ -13,7 +13,9 @@ const SignUp = () => {
       password,
     });
 
-    if(response.status === "")
+    if (response.status === 201) {
+      console.log(response.data);
+    }
   };
 
   return (
