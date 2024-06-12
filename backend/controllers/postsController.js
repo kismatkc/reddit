@@ -1,4 +1,3 @@
-import { Reqest, Response } from "express";
 const Post = require("../models/Post");
 
 const { escapeRegExp } = require("../utils");

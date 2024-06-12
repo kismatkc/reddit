@@ -1,4 +1,4 @@
-const { Request, Response } from "express";
+const { Request, Response } = require("express");
 import connectDatabase from "../server";
 
 export const createUser = async (req: Request, res: Response) => {
