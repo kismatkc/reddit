@@ -4,7 +4,7 @@ const {
   getSearchPosts,
   createPost,
 } = require("../controllers/postsController");
-import 
+
 const router = express.Router();
 
 // Routes
