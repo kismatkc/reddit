@@ -52,6 +52,7 @@ connectDatabase();
 
 // Routes
 app.use("/api/posts", postRoutes);
+app.use("/api/users");
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
