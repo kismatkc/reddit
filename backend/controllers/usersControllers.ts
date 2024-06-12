@@ -21,8 +21,14 @@ export const createUser = async (req: Request, res: Response) => {
       res.status(400).send("Email and password are required");
       return;
     }
+
+    const newUser = new User({ email, password });
+    await newUser.save();
+
+    res.status(201).send(newUser);
   } catch (err) {
     console.log(err);
+    res.status(500).send("Internal server error");
   }
 };
 
