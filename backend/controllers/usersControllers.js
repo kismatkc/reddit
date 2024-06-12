@@ -1,5 +1,6 @@
-import User from "../models/User";
 import connectDatabase from "../server";
+
+const { User } = require("../models/User");
 
 export const createUser = async (req, res) => {
   await connectDatabase();
