@@ -4,7 +4,7 @@ import connectDatabase from "../server";
 export const createUser = async (req: Request, res: Response) => {
   await connectDatabase();
   try {
-    const { email, password } = res.body;
+    const { email, password } = req.body;
   } catch (err) {
     console.log(err);
   }
