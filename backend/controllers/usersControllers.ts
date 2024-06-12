@@ -17,6 +17,10 @@ export const createUser = async (req: Request, res: Response) => {
   await connectDatabase();
   try {
     const { email, password } = req.body; // Corrected this line
+    if (!email || !password) {
+      res.status(400).send("Email and password are required");
+      return;
+    }
   } catch (err) {
     console.log(err);
   }
