@@ -8,6 +8,7 @@ const SignUp = () => {
 
   const handleInput = async (e: FormEvent) => {
     e.preventDefault();
+    const response = API.post("/users/createUser");
   };
 
   return (
