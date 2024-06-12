@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const postRoutes = require("./routes/postsRoutes");
+const usersRoutes = require("./routes/usersRoutes");
 
 dotenv.config();
 
@@ -52,7 +53,7 @@ connectDatabase();
 
 // Routes
 app.use("/api/posts", postRoutes);
-app.use("/api/users", users - routes);
+app.use("/api/users", usersRoutes);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
