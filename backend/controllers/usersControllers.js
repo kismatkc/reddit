@@ -11,5 +11,7 @@ export const createUser = async (req, res) => {
     });
     await newUser.save();
     res.status(201).send(newUser);
-  } catch (err) {}
+  } catch (err) {
+    res.status(500).send(error);
+  }
 };
