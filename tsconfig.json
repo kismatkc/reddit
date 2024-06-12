@@ -27,7 +27,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "backend/controllers/usersControllers.js",
-    "backend/routes/usersRoutes.js"
+    "backend/routes/usersRoutes.js",
+    "backend/models/User.js"
   ],
   "exclude": ["node_modules"]
 }
