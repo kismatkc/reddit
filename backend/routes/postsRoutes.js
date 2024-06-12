@@ -1,9 +1,11 @@
 const express = require("express");
-const {
-  getPublicPosts,
-  getSearchPosts,
-  createPost,
-} = require("../controllers/postsController");
+// const {
+//   getPublicPosts,
+//   getSearchPosts,
+//   createPost,
+// } = require("../controllers/postsController");
+
+import { createUser } from "../controllers/users-controllers";
 
 const router = express.Router();
 
